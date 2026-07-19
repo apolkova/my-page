@@ -161,7 +161,7 @@ export const CV = {
   headline: ME.title,
 
   summary:
-    "Computer Engineering student specializing in backend development, applied machine learning, and natural-language-to-SQL systems. Currently completing an Erasmus internship at INESC TEC, building a local-first NL-to-SQL pipeline with FastAPI, LangGraph, and Ollama for a manufacturing dataset. Seeking a junior software engineer role to apply experience with Python backend systems, LLM tooling, and database engineering.",
+    "Software Engineering graduate specializing in Python backend development, applied machine learning, and natural-language-to-SQL systems. Recently completed an Erasmus research internship at INESC TEC, where I developed a local-first NL-to-SQL pipeline using FastAPI, LangGraph, Ollama, and retrieval-augmented generation for a manufacturing dataset. Seeking a junior backend or software engineering role focused on Python, LLM applications, and database systems.",
 
   sections: [
     {
@@ -178,9 +178,10 @@ export const CV = {
           date: "February - June 2026",
 
           items: [
-            "Built a NL-to-SQL system using RAG and agent-based pipelines.",
-            "Worked with LangGraph, ReAct, and a custom orchestrator.",
-            "Ran inference locally with Ollama to keep data on-premise.",
+            "Designed and implemented a local-first NL-to-SQL pipeline for querying a manufacturing database using natural-language input.",
+            "Built a FastAPI backend integrating retrieval-augmented generation, LangGraph agents, ReAct reasoning, and a custom orchestration layer.",
+            "Integrated Ollama for fully local LLM inference, enabling sensitive manufacturing data to remain on-premise.",
+            "Evaluated generated SQL queries against the target database and analyzed common translation and execution errors.",
           ],
         },
         {
@@ -193,9 +194,9 @@ export const CV = {
           date: "October 2025",
 
           items: [
-            "Built a desktop computer-vision application for Enefit Industry.",
-            "Detected mining safety-protocol violations from camera feeds.",
-            "Project evaluated excellent by stakeholders.",
+            "Developed a desktop computer-vision application for Enefit Industry to detect mining safety-protocol violations in camera footage.",
+            "Implemented video-processing and violation-detection workflows for an industrial safety use case.",
+            "Presented the application to industry stakeholders and received an excellent project evaluation.",
           ],
         },
       ],
@@ -208,9 +209,9 @@ export const CV = {
           heading: "MSc, Software Engineering",
 
           organization:
-            "Tomas Bata University – Faculty of Applied Informatics, Zlín",
+            "Tomas Bata University in Zlín, Faculty of Applied Informatics, Zlín",
 
-          date: "Starting September 2026",
+          date: "Started September 2025",
 
           items: [],
         },
@@ -218,7 +219,7 @@ export const CV = {
           heading: "Erasmus+ Exchange",
 
           organization:
-            "Polytechnic of Porto, Portugal",
+            "Polytechnic Institute of Porto, Portugal",
 
           date: "February 2026 – June 2026",
 

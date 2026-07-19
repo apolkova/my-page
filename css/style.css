@@ -453,20 +453,7 @@ code {
 }
 
 
-@media (max-width: 760px) {
-  .dock button,
-  .dock .dock-app {
-    width: 48px;
-    height: 48px;
-    flex-basis: 48px;
-  }
 
-  .dock button svg,
-  .dock .dock-app svg {
-    width: 48px;
-    height: 48px;
-  }
-}
 
 /* CV */
 
@@ -1203,111 +1190,7 @@ a.contact-card:hover {
   text-align: center;
 }
 
-@media (max-width: 760px) {
-    .cv-entry-heading {
-    flex-direction: column;
-    gap: 4px;
-  }
 
-
-  .cv-date {
-    white-space: normal;
-  }
-
-  .icon {
-    width: 80px;
-  }
-
-  .icon .art {
-    width: 52px;
-    height: 52px;
-  }
-
-  .dock button {
-    width: 48px;
-    height: 48px;
-  }
-
-  .menubar .name {
-    display: none;
-  }
-
-  .menu-trigger {
-    padding: 0 5px;
-  }
-
-  .content {
-    padding: 18px;
-  }
-  .notes-app {
-    grid-template-columns: 135px 1fr;
-    margin: -18px;
-  }
-
-  .swot-document {
-    width: calc(100% + 36px);
-    min-height: calc(100% + 36px);
-    margin: -18px;
-    padding: 12px;
-  }
-
-  .notes-sidebar {
-    padding: 10px 7px;
-  }
-
-  .note-link {
-    padding: 9px 8px;
-  }
-
-  .notes-detail {
-    padding: 20px;
-  }
-
-  .cv-note-block {
-    grid-template-columns: 1fr;
-  }
-
-  .cv-note-marker {
-    width: 32px;
-    height: 32px;
-  }
-
-  .skills-grid,
-  .interest-columns {
-    grid-template-columns: 1fr;
-  }
-  .project-image-link .large-screenshot {
-    height: 280px;
-  }
-
-  .project-image-link .photo-strip-image {
-    max-width: 200px;
-    max-height: 420px;
-  }
-
-  .countdown-card {
-    max-width: 100%;
-  }
-
-  .countdown-grid {
-    gap: 5px;
-    padding: 6px;
-  }
-
-  .mosaic-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .mosaic-item {
-    height: auto;
-  }
-
-  .mosaic-image-link img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-}
 
 /* Desktop widgets */
 
@@ -1556,4 +1439,271 @@ a.contact-card:hover {
   border-radius: inherit;
   background: var(--primary);
   transition: width 0.3s linear;
+}
+
+/* =========================================================
+   MACBOOK / SMALL DESKTOP
+   ========================================================= */
+
+@media (min-width: 761px) and (max-width: 1440px),
+       (min-width: 761px) and (max-height: 900px) {
+  .window {
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 76px);
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .icon {
+    width: 88px;
+  }
+
+  .icon .art {
+    width: 58px;
+    height: 58px;
+  }
+
+  .icon .label {
+    font-size: 11px;
+  }
+
+  .dock {
+    bottom: 8px;
+    gap: 6px;
+    padding: 7px 9px;
+  }
+
+  .dock button,
+  .dock .dock-app {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+  }
+
+  .dock button svg,
+  .dock .dock-app svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  #widget-layer {
+    inset: 30px 0 76px;
+  }
+
+  .profile-widget {
+    width: 300px;
+    grid-template-columns: 78px 1fr;
+    gap: 13px;
+    padding: 13px;
+  }
+
+  .profile-widget img {
+    width: 78px;
+    height: 78px;
+  }
+
+  .thought-widget {
+    width: 215px;
+    padding: 13px;
+  }
+
+  .sticky-widget {
+    width: 205px;
+    padding: 16px;
+  }
+
+  .player-widget {
+    width: 350px;
+    grid-template-columns: 74px minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .player-cover {
+    width: 74px;
+    height: 74px;
+    min-width: 74px;
+  }
+
+  .notes-app {
+    grid-template-columns: 190px 1fr;
+  }
+
+  .notes-detail {
+    padding: 24px;
+  }
+}
+
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .menubar {
+    padding: 0 6px;
+  }
+
+  .menubar .name {
+    display: none;
+  }
+
+  .menu-trigger {
+    padding: 0 5px;
+    font-size: 12px;
+  }
+
+  .menubar .spacer {
+    font-size: 11px;
+    padding-right: 2px;
+  }
+
+  #desktop {
+    inset: 30px 0 72px;
+    overflow: auto;
+  }
+
+  .icon {
+    width: 80px;
+  }
+
+  .icon .art {
+    width: 52px;
+    height: 52px;
+  }
+
+  .icon .label {
+    font-size: 10px;
+  }
+
+  .window {
+    min-width: 0;
+    min-height: 0;
+    max-width: calc(100vw - 12px);
+    max-height: calc(100vh - 72px);
+  }
+
+  .content {
+    padding: 18px;
+  }
+
+  .content h1 {
+    font-size: 21px;
+  }
+
+  .cv-entry-heading {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .cv-date {
+    white-space: normal;
+  }
+
+  .dock {
+    bottom: 7px;
+    max-width: calc(100vw - 12px);
+    gap: 5px;
+    padding: 6px 8px;
+    overflow-x: auto;
+  }
+
+  .dock button,
+  .dock .dock-app {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+  }
+
+  .dock button svg,
+  .dock .dock-app svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .dock .tip {
+    display: none;
+  }
+
+  #widget-layer {
+    display: none;
+  }
+
+  .notes-app {
+    grid-template-columns: 118px minmax(0, 1fr);
+    margin: -18px;
+  }
+
+  .notes-sidebar {
+    padding: 8px 6px;
+  }
+
+  .note-link {
+    padding: 8px 7px;
+    font-size: 11px;
+  }
+
+  .notes-detail {
+    padding: 16px;
+  }
+
+  .notes-detail h1 {
+    font-size: 23px;
+  }
+
+  .cv-note-block {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-note-marker {
+    width: 32px;
+    height: 32px;
+  }
+
+  .swot-document {
+    width: calc(100% + 36px);
+    min-height: calc(100% + 36px);
+    margin: -18px;
+    padding: 12px;
+  }
+
+  .project-image-link .large-screenshot {
+    height: auto;
+  }
+
+  .project-image-link .photo-strip-image {
+    max-width: 190px;
+    max-height: 400px;
+  }
+
+  .countdown-card {
+    max-width: 100%;
+  }
+
+  .countdown-grid {
+    gap: 5px;
+    padding: 6px;
+  }
+
+  .mosaic-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .mosaic-image-link img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .wide-grid {
+    gap: 12px;
+    padding: 8px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
