@@ -163,23 +163,58 @@ PROJECTS.forEach((project, index) => {
   });
 });
 
+function isMobileLayout() {
+  return window.matchMedia("(max-width: 760px)").matches;
+}
+
+function getMobileIconPosition(index) {
+  const screenWidth = window.innerWidth;
+
+  const columns = screenWidth < 380 ? 3 : 4;
+  const iconWidth = 78;
+  const rowHeight = 105;
+
+  const availableSpace = screenWidth - columns * iconWidth;
+  const gap = Math.max(3, availableSpace / (columns + 1));
+
+  const column = index % columns;
+  const row = Math.floor(index / columns);
+
+  return {
+    x: Math.round(gap + column * (iconWidth + gap)),
+    y: 18 + row * rowHeight,
+  };
+}
+
 function renderDesktopIcons() {
   desktop.innerHTML = "";
 
-  icons.forEach((icon) => {
+  icons.forEach((icon, index) => {
     const button = document.createElement("button");
 
     button.type = "button";
     button.className = "icon";
     button.dataset.id = icon.id;
     button.dataset.group = icon.group;
-    button.style.left = `${icon.x}px`;
-    button.style.top = `${icon.y + 30}px`;
-    button.setAttribute("aria-label", `Open ${icon.label}`);
+    button.setAttribute(
+      "aria-label",
+      `Open ${icon.label}`,
+    );
+
+    const position = isMobileLayout()
+      ? getMobileIconPosition(index)
+      : {
+          x: icon.x,
+          y: icon.y + 30,
+        };
+
+    button.style.left = `${position.x}px`;
+    button.style.top = `${position.y}px`;
 
     button.appendChild(icon.art());
 
     const label = document.createElement("span");
+
     label.className = "label";
     label.textContent = icon.label;
 
@@ -188,12 +223,25 @@ function renderDesktopIcons() {
 
     makeIconDraggable(button, icon);
 
+    // One tap opens files and folders on mobile.
+    button.addEventListener("click", () => {
+      if (isMobileLayout()) {
+        openWindow(icon.id);
+      }
+    });
+
+    // Double-click remains for desktop and MacBook.
     button.addEventListener("dblclick", () => {
-      openWindow(icon.id);
+      if (!isMobileLayout()) {
+        openWindow(icon.id);
+      }
     });
 
     button.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
+      if (
+        event.key === "Enter" ||
+        event.key === " "
+      ) {
         event.preventDefault();
         openWindow(icon.id);
       }
@@ -204,6 +252,11 @@ function renderDesktopIcons() {
 }
 
 function makeIconDraggable(button, icon) {
+  // Disable icon dragging on phones.
+  if (isMobileLayout()) {
+    return;
+  }
+
   button.addEventListener("pointerdown", (event) => {
     event.preventDefault();
 

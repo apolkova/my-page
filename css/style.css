@@ -1706,4 +1706,76 @@ a.contact-card:hover {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+
+  body {
+    overflow: hidden;
+  }
+
+  #desktop {
+    position: fixed;
+    inset: 30px 0 70px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+  }
+
+  .icon {
+    width: 78px;
+    min-height: 92px;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+
+  .icon .art {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon .label {
+    max-width: 76px;
+    padding: 2px 4px;
+    font-size: 10px;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  /* Hide desktop widgets on phones. */
+  #widget-layer {
+    display: none;
+  }
+
+  .dock {
+    bottom: 7px;
+    max-width: calc(100vw - 16px);
+    gap: 5px;
+    padding: 6px 8px;
+  }
+
+  .dock button,
+  .dock .dock-app {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+  }
+
+  .dock button svg,
+  .dock .dock-app svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .dock .tip {
+    display: none;
+  }
+
+  .window {
+    min-width: 0;
+    min-height: 0;
+    max-width: calc(100vw - 12px);
+    max-height: calc(100vh - 78px);
+  }
+
+  .content {
+    padding: 16px;
+  }
 }
